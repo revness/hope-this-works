@@ -1,7 +1,7 @@
 ---
 path: "/2018-09-05-humble-beginnings"
 date: "2018-09-05"
-title: "My First Gatsby Post"
+title: "Hot girl"
 featuredImage: "./featured-image.jpg"
 ---
 
