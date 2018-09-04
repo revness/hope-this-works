@@ -8,6 +8,10 @@ import "../styles/layout-overide.css";
 
 import Media from "react-media";
 
+import Sidebar from '../components/sidebar';
+import Sidebarsocial from '../components/sidebarsocial';
+
+
 const Header = () => (
   <div
     style={{
@@ -38,23 +42,12 @@ const Header = () => (
   </div>
 );
 
-const Sidebar = props => (
-  <div
-    style={{
-      border: "2px solid #e6e6e6",
-      maxWidth: 960,
-      padding: "0.5rem",
-      marginBottom: "25px"
-    }}
-  >
-    <strong>{props.title}.</strong> <br />{props.description}
-  </div>
-);
+
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Lose the"
       meta={[
         { name: "description", content: "Sample" },
         { name: "keywords", content: "sample, something" }
@@ -112,6 +105,17 @@ const TemplateWrapper = ({ children }) => (
                   title="About author"
                   description="Chappo is a 32 y.o. dude from Australia trying to develop healthier habits (and learn how to code at the same time!)"
                 />
+                  <Sidebar
+                  title="Current progress"
+                  description="Weight: 78kg (-5kg from peak)"
+                />
+                   <Sidebarsocial
+                  title="Social"
+                  description=""
+                  href=""
+                  linktext=""
+                />
+  
               </div>
             </div>
           )
