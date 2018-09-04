@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import Img from 'gatsby-image'
 
 import '../styles/blog-listing.css'; 
 
@@ -17,6 +18,7 @@ export default function Index({ data }) {
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h1>
               <h2>{post.frontmatter.date}</h2>
+              <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
               <p>{post.excerpt}</p>
             </div>
           );
@@ -30,10 +32,17 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 280)
           id
           frontmatter {
             title
+            featuredImage {
+              childImageSharp{
+                  sizes(maxWidth: 630) {
+                      ...GatsbyImageSharpSizes
+                  }
+              }
+          }
             date(formatString: "MMMM DD, YYYY")
             path
           }

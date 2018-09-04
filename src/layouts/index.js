@@ -31,7 +31,7 @@ const Header = () => (
             textDecoration: "none"
           }}
         >
-          CodeStack
+          Lose the Kilos.
         </Link>
       </h1>
     </div>
@@ -47,7 +47,7 @@ const Sidebar = props => (
       marginBottom: "25px"
     }}
   >
-    <strong>{props.title}.</strong> {props.description}
+    <strong>{props.title}.</strong> <br />{props.description}
   </div>
 );
 
@@ -105,12 +105,12 @@ const TemplateWrapper = ({ children }) => (
 
               <div style={{ flex: 1 }}>
                 <Sidebar
-                  title="Codestack"
-                  description="Articles on React and Node.js. All articles are written by Emmanuel Yusufu, Fullstack Web Development."
+                  title="Lose the Kilos"
+                  description="An exercise, diet and photo/video blog that I'm using to track my progress"
                 />
                 <Sidebar
                   title="About author"
-                  description="Emmanuel Yusufu is a Full-stack Web Developer specializing in React and Node.js based in Nigeria."
+                  description="Chappo is a 32 y.o. dude from Australia trying to develop healthier habits (and learn how to code at the same time!)"
                 />
               </div>
             </div>
