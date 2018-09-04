@@ -6,38 +6,45 @@
 
  // You can delete this file if you're not using it
 
- const path = require('path');
 
- exports.createPages = ({boundActionCreators, graphql}) => {
-     const { createPage } = boundActionCreators
+ const path = require("path");
 
-     const postTemplate = path.resolve('src/templates/blog-post.js');
+exports.createPages = ({ boundActionCreators, graphql }) => {
+  const { createPage } = boundActionCreators;
 
-     return graphql(`
-     {
-        allMarkdownRemark{
-            edges {
-              node {
-                  id
-                frontmatter {
-                  path
-                  title
-                  date
-                  author
-                }
-              }
+  const blogPostTemplate = path.resolve(`src/templates/blog-template.js`);
+
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            html
+            id
+            frontmatter {
+              date
+              path
+              title
+            }
           }
+        }
       }
-     }
-     `).then(res => {
-         if(res.errors){
-             return Promise.reject(res.errors)
-         }
-         res.data.allMarkdownRemark.edges.forEach(({node}) =>{
-             createPage({
-                 path: node.frontmatter.path,
-                 component: postTemplate,
-             })
-         }) 
-     })
- }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: blogPostTemplate,
+        context: {}, // additional data can be passed via context
+      });
+    });
+  });
+};
