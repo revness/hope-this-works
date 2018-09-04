@@ -4,8 +4,10 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import Menu from '../components/menu'
+import Sidebar from '../components/sidebar'
 
 import './index.css'
+
 
 const Layout = ({ children, data }) => (
   <div>
@@ -20,6 +22,8 @@ const Layout = ({ children, data }) => (
     <Menu />
     <div
       style={{
+        position: 'absolute',
+        left: '10px',
         margin: '0 auto',
         maxWidth: 960,
         padding: '0px 1.0875rem 1.45rem',
@@ -28,7 +32,12 @@ const Layout = ({ children, data }) => (
     >
       {children()}
     </div>
+    <div>
+  <Sidebar />
   </div>
+
+  </div>
+  
 )
 
 Layout.propTypes = {
