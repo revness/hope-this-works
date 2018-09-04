@@ -115,15 +115,22 @@ const TemplateWrapper = ({ children }) => (
                   href=""
                   linktext=""
                 />
+<div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
   
               </div>
             </div>
+            
           )
         }
       </Media>
     </div>
   </div>
 );
+
+
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
