@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const Sidebar = props => 
+const Sidebar2 = props => 
  (
     <div style={{
         background: '#f4f4f4',
@@ -10,7 +10,8 @@ const Sidebar = props =>
     right: '20px',
     width: '300px',
     border: '2px solid #e6e6e6',
-    marginBottom: "25px"
+    marginBottom: "25px",
+    marginTop: "200px"
 
     }}>
      Pariatur pariatur pariatur duis culpa eiusmod in eiusmod non. Ex anim sunt dolor magna cupidatat incididunt adipisicing sit reprehenderit fugiat consequat dolore. Ea nulla non sit do dolor culpa mollit id ipsum.
@@ -18,4 +19,4 @@ const Sidebar = props =>
   )
 
 
-export default Sidebar;
+export default Sidebar2;
