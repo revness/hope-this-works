@@ -103,7 +103,7 @@ const TemplateWrapper = ({ children }) => (
                 />
                 <Sidebar
                   title="About author"
-                  description="Chappo is a 32 y.o. dude from Australia trying to develop healthier habits (and learn how to code at the same time!)"
+                  description="A 32 y.o. dude from Australia trying to develop healthier habits (and learn how to code at the same time!)"
                 />
                   <Sidebar
                   title="Goals"
