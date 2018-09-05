@@ -106,8 +106,16 @@ const TemplateWrapper = ({ children }) => (
                   description="Chappo is a 32 y.o. dude from Australia trying to develop healthier habits (and learn how to code at the same time!)"
                 />
                   <Sidebar
+                  title="Goals"
+                  description="72kg, c25k"
+                />
+                <Sidebar
+                  title="Strategy"
+                  description="Stretch/yoga twice weekly, hiit weekly, boulder twice weekly, 20-4 IF"
+                />
+                  <Sidebar
                   title="Current progress"
-                  description="Weight: 78kg (-5kg from peak)"
+                  description="Current weight: 78kg (-5kg from peak)"
                 />
                    <Sidebarsocial
                   title="Social"
